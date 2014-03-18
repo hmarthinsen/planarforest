@@ -1,0 +1,85 @@
+\documentclass[a4paper, 11pt, pdftex]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{planarforest}
+
+\begin{document}
+\title{Test of planarforest package}
+\author{Håkon Marthinsen}
+\date{March 18, 2014}
+\maketitle
+
+\newnodecolor{r}{red}
+
+
+\noindent
+A forest is \emph{beautiful} if:
+\begin{itemize}
+	\item Each subtree is beautiful.
+	\item The horizontal distance between two adjacent subtrees is one unit.
+	\item The roots of the subtrees are spaced out as evenly as possible.
+\end{itemize}
+A tree is \emph{beautiful} if:
+\begin{itemize}
+	\item The forest you get by removing the root of the tree is beautiful.
+	\item The vertical distance between the root and the next level of nodes is one unit.
+	\item The horizontal position of the root is the median of the horizontal positions of the roots of the subtrees.
+\end{itemize}
+Additionaly:
+\begin{itemize}
+	\item The tree consisting of a single node is beautiful.
+\end{itemize}
+
+
+\section*{Colors}
+\forest{b[w,r]}
+
+
+\section*{Planar trees of order 1--6}
+\begin{tabular}{ll}
+	1 node  & \forest{b} \\
+	2 nodes & \forest{b[b]} \\
+	3 nodes & \forest{b[b[b]]} \forest{b[b,b]} \\
+	4 nodes & \forest{b[b[b[b]]]} \forest{b[b[b,b]]} \forest{b[b,b[b]]} \forest{b[b[b],b]} \forest{b[b,b,b]} \\
+	5 nodes & \forest{b[b[b[b[b]]]]} \forest{b[b[b[b,b]]]} \forest{b[b[b,b[b]]]} \forest{b[b[b[b],b]]} \forest{b[b,b[b[b]]]} \forest{b[b[b[b]],b]} \forest{b[b[b,b,b]]} \forest{b[b,b[b,b]]}  \forest{b[b[b,b],b]} \forest{b[b[b],b[b]]} \forest{b[b,b,b[b]]} \forest{b[b,b[b],b]} \forest{b[b[b],b,b]} \forest{b[b,b,b,b]} \\
+	6 nodes & \forest{b[b[b[b[b[b]]]]]} \forest{b[b[b[b[b,b]]]]} \forest{b[b[b[b,b[b]]]]} \forest{b[b[b[b[b],b]]]} \forest{b[b[b,b[b[b]]]]} \forest{b[b[b[b[b]],b]]} \forest{b[b,b[b[b[b]]]]} \forest{b[b[b[b[b]]],b]} \forest{b[b[b[b,b,b]]]} \forest{b[b[b,b[b,b]]]} \forest{b[b[b[b,b],b]]} \forest{b[b,b[b[b,b]]]} \forest{b[b[b[b,b]],b]} \forest{b[b[b[b],b[b]]]} \forest{b[b[b,b,b[b]]]} \forest{b[b[b,b[b],b]]} \forest{b[b[b[b],b,b]]} \forest{b[b,b[b,b[b]]]} \forest{b[b[b,b[b]],b]} \forest{b[b,b[b[b],b]]} \forest{b[b[b[b],b],b]} \forest{b[b[b],b[b[b]]]} \forest{b[b[b[b]],b[b]} \forest{b[b,b,b[b[b]]]}  \forest{b[b,b[b[b]],b]} \forest{b[b[b[b]],b,b]} \\
+	        & \forest{b[b[b,b],b,b]} \forest{b[b,b[b,b],b]} \forest{b[b,b,b[b,b]]} \forest{b[b[b,b,b,b]]} \forest{b[b,b[b,b,b]]} \forest{b[b[b,b,b],b]} \forest{b[b[b],b[b,b]]} \forest{b[b[b,b],b[b]} \forest{b[b,b[b],b[b]]} \forest{b[b[b],b,b[b]]} \forest{b[b[b],b[b],b]} \forest{b[b[b],b,b,b]} \forest{b[b,b[b],b,b]} \forest{b[b,b,b[b],b]} \forest{b[b,b,b,b[b]]} \forest{b[b,b,b,b,b]} \\
+\end{tabular}
+
+
+\section*{Planar forests of order 1--6}
+\begin{tabular}{ll}
+	1 node  & \forest{b} \\
+	2 nodes & \forest{b[b]} \forest{b,b} \\
+	3 nodes & \forest{b[b[b]]} \forest{b[b,b]} \forest{b,b[b]} \forest{b[b],b} \forest{b,b,b} \\
+	4 nodes & \forest{b[b[b[b]]]} \forest{b[b[b,b]]} \forest{b[b,b[b]]} \forest{b[b[b],b]} \forest{b,b[b[b]]} \forest{b[b[b]],b} \forest{b[b,b,b]} \forest{b,b[b,b]}  \forest{b[b,b],b} \forest{b[b],b[b]} \forest{b,b,b[b]} \forest{b,b[b],b} \forest{b[b],b,b} \forest{b,b,b,b} \\
+	5 nodes & \forest{b[b[b[b[b]]]]} \forest{b[b[b[b,b]]]} \forest{b[b[b,b[b]]]} \forest{b[b[b[b],b]]} \forest{b[b,b[b[b]]]} \forest{b[b[b[b]],b]} \forest{b,b[b[b[b]]]} \forest{b[b[b[b]]],b} \forest{b[b[b,b,b]]} \forest{b[b,b[b,b]]} \forest{b[b[b,b],b]} \forest{b,b[b[b,b]]} \forest{b[b[b,b]],b} \forest{b[b[b],b[b]]} \forest{b[b,b,b[b]]} \forest{b[b,b[b],b]} \forest{b[b[b],b,b]} \forest{b,b[b,b[b]]} \forest{b[b,b[b]],b} \forest{b,b[b[b],b]} \forest{b[b[b],b],b} \forest{b[b],b[b[b]]} \forest{b[b[b]],b[b} \forest{b,b,b[b[b]]}  \forest{b,b[b[b]],b} \forest{b[b[b]],b,b} \\
+	        & \forest{b[b,b],b,b} \forest{b,b[b,b],b} \forest{b,b,b[b,b]} \forest{b[b,b,b,b]} \forest{b,b[b,b,b]} \forest{b[b,b,b],b} \forest{b[b],b[b,b]} \forest{b[b,b],b[b} \forest{b,b[b],b[b]} \forest{b[b],b,b[b]} \forest{b[b],b[b],b} \forest{b[b],b,b,b} \forest{b,b[b],b,b} \forest{b,b,b[b],b} \forest{b,b,b,b[b]} \forest{b,b,b,b,b} \\
+\end{tabular}
+
+
+\section*{Difficult forests}
+\forest{b,b,b[b,b[b,b,b]],b,b[b,b,b[b,b]],b[b]} \forest{b[b,b],b,b,b[b],b[b,b]} \forest{b[b,b],b,b,b[b,b],b[b]} \forest{r,b[b,b,b[b,b[b,b,b]],b,b[b,b,b[b,b[b,b,b[b,b[b,b,b]],b,b[b,b,b[b,b]],b[b]]]],b[b[r,r,b[b,b[b,b,b]],b,b[b,b,b[b,b]],b[b]]]],b[b,b[b,b,b]],b,b[b,b,b[b,b]],b[b]}
+\forest{b[b,b,b],b,b[b,b,b]}
+\forest{b[b[b,b,b],b,b[b,b,b]]}
+\forest{b[b,b,b[b,b,b]],b,b[b],b[b[b,b,b]]}
+\forest{b[b,b[b,b]],b,b[b[b,b],b]}
+\medskip
+
+\noindent
+\forest{w[b[b[b[b[b,b],b[b,b]],b[b[b,b],b[b,b]]],b[b[b[b,b],b[b,b]],b[b[b,b],b[b,b]]]],b,b[b,b,b,b],b[b[b[b[b,b],b[b,b]],b[b[b,b],b[b,b]]],b[b[b[b,b],b[b,b]],b[b[b,b],b[b,b]]]]]]}
+
+
+\section*{License}
+planarforest is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+planarforest is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with planarforest.
+If not, see \url{http://www.gnu.org/licenses/}.
+
+
+\end{document}
